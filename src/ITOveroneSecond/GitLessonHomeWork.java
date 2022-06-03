@@ -1,5 +1,4 @@
 package ITOveroneSecond;
-
 /*
 Создать новый проект.
 Написать метод, который принимает список чисел и возвращает минимальное число из списка чисел.
@@ -20,7 +19,7 @@ public class GitLessonHomeWork {
         for (int i = 0; i < 30; i++) {
             numbersList.add(numGen.nextInt(130)-30);
         }
-        System.out.println(numbersList);
+        System.out.println("numburList: \n" + numbersList);
         System.out.println("Min of numberList = " + findMin(numbersList));
     }
     static int findMin(List<Integer> someList) {
