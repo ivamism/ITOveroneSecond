@@ -8,6 +8,7 @@ package ITOveroneSecond;
  */
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HomeWork {
@@ -17,10 +18,13 @@ public class HomeWork {
         for (int i = 0; i < 10; i++) {
             numbersList.add(i, i);
         }
-
         System.out.println(numbersList);
+        System.out.println("Min of numberList = " + findMin(numbersList));
     }
 
+    static int findMin(List<Integer> someList) {
+        return Collections.min(someList);
+    }
 }
 
 
