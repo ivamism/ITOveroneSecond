@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class HomeWork {
+public class GitLessonHomeWork {
 
     public static void main(String[] args) {
         List<Integer> numbersList = new ArrayList<>();
