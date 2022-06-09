@@ -1,4 +1,4 @@
-package ITOveroneSecond.Lessson3;
+package ITOveroneSecond.Level4.Lessson3;
 /*
 Создайте класс Человек с полем age, сделайте поле закрытым, создайте геттер и сеттер к полю,
 в сеттер добавьте проверку, если переданный аргумент меньше нуля выкиньте исключение RuntimeException
@@ -7,35 +7,16 @@ package ITOveroneSecond.Lessson3;
  */
 
 public class Human {
-     private static int age;
+     private  int age;
 
-//    public static String getName() {
-//        return name;
-//    }
-//
-//    public static void setName(String name) {
-//        Human.name = name;
-//    }
-
-    static String name;
-
-    public static void setAge(int age) {
-        if (age <0){
-            throw new RuntimeException("Не корректное число для возраст. Введите корректное число");
-        }
-        Human.age = age;
-    }
-
-    public static int getAge() {
+    public int getAge() {
         return age;
     }
 
-    public static void main(String[] args) {
-        setAge(50);
-        System.out.println("Возраст " + getAge());
-//        System.out.println(name);
-        setAge(-5);
-        System.out.println(getAge());
-
+    public void setAge(int age) {
+        if (age <0){
+            throw new RuntimeException("Не корректное число для возраст. Введите корректное число");
+        }
+        this.age = age;
     }
 }

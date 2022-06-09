@@ -1,4 +1,4 @@
-package ITOveroneSecond;
+package ITOveroneSecond.Level4.Lesson1;
 /*
 Создать новый проект.
 Написать метод, который принимает список чисел и возвращает минимальное число из списка чисел.
@@ -22,7 +22,7 @@ public class GitLessonHomeWork {
         System.out.println("numburList: \n" + numbersList);
         System.out.println("Min of numberList = " + findMin(numbersList));
     }
-    static int findMin(List<Integer> someList) {
+    static Integer findMin(List<Integer> someList) {
         return Collections.min(someList);
     }
 }
