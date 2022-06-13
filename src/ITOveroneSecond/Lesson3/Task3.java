@@ -1,4 +1,4 @@
-package ITOveroneSecond.Lessson3;
+package ITOveroneSecond.Lesson3;
 
 /*
 Сделать вывод на экран “Начало main”. Создать массив на 3 элемента.

@@ -1,4 +1,4 @@
-package ITOveroneSecond.Lessson3;
+package ITOveroneSecond.Lesson3;
 /*
 Создайте класс Человек с полем age, сделайте поле закрытым, создайте геттер и сеттер к полю,
 в сеттер добавьте проверку, если переданный аргумент меньше нуля выкиньте исключение RuntimeException
