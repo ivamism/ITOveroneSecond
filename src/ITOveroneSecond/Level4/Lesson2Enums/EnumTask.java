@@ -1,4 +1,4 @@
-package ITOveroneSecond.Level4.Lesson2;
+package ITOveroneSecond.Level4.Lesson2Enums;
 
 /*
 создайте enum Возраст, добавьте константы: молодой, взрослый, пожилой, долгожитель.

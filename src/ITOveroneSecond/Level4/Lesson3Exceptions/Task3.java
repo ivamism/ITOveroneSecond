@@ -1,4 +1,4 @@
-package ITOveroneSecond.Level4.Lesson3;
+package ITOveroneSecond.Level4.Lesson3Exceptions;
 
 /*
 Сделать вывод на экран “Начало main”. Создать массив на 3 элемента.

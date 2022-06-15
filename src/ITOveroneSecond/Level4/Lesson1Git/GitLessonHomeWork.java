@@ -1,4 +1,4 @@
-package ITOveroneSecond.Level4.Lesson1;
+package ITOveroneSecond.Level4.Lesson1Git;
 /*
 Создать новый проект.
 Написать метод, который принимает список чисел и возвращает минимальное число из списка чисел.
