@@ -1,7 +1,4 @@
-package ITOveroneSecond.Lesson4.Annotaitions;
-
-import ITOveroneSecond.Lesson4.Annotaitions.OnlyForField;
-import ITOveroneSecond.Lesson4.Annotaitions.OnlyForMethod;
+package ITOveroneSecond.Level4.Lesson4Annotaitions;
 
 /*
 Создайте 2 аннотации: OnlyForField, OnlyForMethod.
