@@ -100,6 +100,16 @@ public class CityRepository {
         // 6
         connection.close();
     }
-
+    public void delete(int id) throws SQLException, IOException, ClassNotFoundException {
+        Connection connection = getConnection();
+        // 3
+        String sql = "delete from city where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        // 4
+        statement.execute();
+        // 6
+        connection.close();
+    }
 }
 

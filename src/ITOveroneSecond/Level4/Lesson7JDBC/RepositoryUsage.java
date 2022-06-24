@@ -10,14 +10,12 @@ import java.util.List;
 public class RepositoryUsage {
     public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
         CityRepository repository = new CityRepository();
-        City city = new City(5, "Vitebsk");
+//        City city = new City(5, "Vitebsk");
 //        City newYork = new City("New York");
 //        repository.add(newYork);
-        City receivedCity = repository.getById(5);
-        System.out.println("Получил город из базы данных: " + receivedCity);
-        System.out.println("Меняю название города: " + receivedCity + " на: " + city);
-        repository.update(city);
-
+//        City receivedCity = repository.getById(5);
+//        System.out.println("Получил город из базы данных: " + receivedCity);
+        repository.delete(9);
 
         List<City> cities = repository.getAll();
         System.out.println("Получил все города из базы данных: " + cities);
