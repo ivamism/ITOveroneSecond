@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+// Порядок работы с БД
 // 1. добавить драйвер.
 // 2. подключиться к бд.
 // 3. создать Statement.
@@ -87,5 +88,18 @@ public class CityRepository {
 
         return cities;
     }
+    public void update(City city) throws IOException, ClassNotFoundException, SQLException {
+        Connection connection = getConnection();
+        // 3
+        String sql = "update city set name = ? where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, city.name);
+        statement.setInt(2, city.id);
+        // 4
+        statement.execute();
+        // 6
+        connection.close();
+    }
+
 }
 
