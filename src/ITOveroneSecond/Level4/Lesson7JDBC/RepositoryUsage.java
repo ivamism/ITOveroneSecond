@@ -5,6 +5,7 @@ import ITOveroneSecond.Level4.Lesson7JDBC.repositoty.CityRepository;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.List;
 
 public class RepositoryUsage {
     public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
@@ -12,8 +13,10 @@ public class RepositoryUsage {
 //        City london = new City("London");
 //        City newYork = new City("New York");
 //        repository.add(newYork);
-        City receivedCity = repository.getById(7);
-        System.out.println("Получил город из базы данных: " + receivedCity);
+//        City receivedCity = repository.getById(7);
+//        System.out.println("Получил город из базы данных: " + receivedCity);
+        List<City> cities = repository.getAll();
+        System.out.println("Получил все города из базы данных: " + cities);
 
     }
 }
