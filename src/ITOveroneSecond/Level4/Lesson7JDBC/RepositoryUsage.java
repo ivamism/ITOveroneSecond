@@ -10,7 +10,10 @@ public class RepositoryUsage {
     public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
         CityRepository repository = new CityRepository();
 //        City london = new City("London");
-        City newYork = new City("New York");
-        repository.add(newYork);
+//        City newYork = new City("New York");
+//        repository.add(newYork);
+        City receivedCity = repository.getById(7);
+        System.out.println("Получил город из базы данных: " + receivedCity);
+
     }
 }

@@ -42,5 +42,27 @@ public class CityRepository {
         Connection connection = DriverManager.getConnection(url, login, password);
         return DriverManager.getConnection(url, login, password);
     }
+    public City getById(int id) throws SQLException, IOException, ClassNotFoundException {
+        Connection connection = getConnection();
+        // 3
+        String sql = "select * from city where id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id);
+        // 4
+        statement.execute();
+        // 5
+        City city = new City();
+        ResultSet resultSet = statement.getResultSet();
+        if (resultSet.next()) {
+            String name = resultSet.getString("name");
+            city.id = id;
+            city.name = name;
+        }
+
+        // 6
+        connection.close();
+
+        return city;
+    }
 }
 
