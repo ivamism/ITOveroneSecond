@@ -1,6 +1,6 @@
-package ITOveroneSecond.Level4.Lesson7JDBC.repositoty;
+package ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.repositoty;
 
-import ITOveroneSecond.Level4.Lesson7JDBC.model.City;
+import ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.model.City;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
+import static ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.DBConnection.getConnection;
 
 // Порядок работы с БД
 // 1. добавить драйвер.
@@ -19,17 +21,7 @@ import java.util.Properties;
 
 // 1,2 Подключение к БД
 public class CityRepository {
-    private Connection getConnection () throws IOException, ClassNotFoundException, SQLException {
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("config/jdbc.properties"));
-        Class.forName(properties.getProperty("driver-class-name"));
-        // 2: url, login, password
-        String url = properties.getProperty("url");
-        String login = properties.getProperty("login");
-        String password = properties.getProperty("password");
-        Connection connection = DriverManager.getConnection(url, login, password);
-        return DriverManager.getConnection(url, login, password);
-    }
+
     // CRUD: Create - Read - Update - Delete
     //        Create
     public void add (City city) throws IOException, ClassNotFoundException, SQLException {

@@ -1,7 +1,7 @@
-package ITOveroneSecond.Level4.Lesson7JDBC.repositoty;
+package ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.repositoty;
 
-import ITOveroneSecond.Level4.Lesson7JDBC.model.City;
-import ITOveroneSecond.Level4.Lesson7JDBC.model.Person;
+import ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.model.City;
+import ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.model.Person;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,18 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import static ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.DBConnection.getConnection;
+
 public class PersonRepository {
-    private Connection getConnection () throws IOException, ClassNotFoundException, SQLException {
-        Properties properties = new Properties();
-        properties.load(new FileInputStream("config/jdbc.properties"));
-        Class.forName(properties.getProperty("driver-class-name"));
-        // 2: url, login, password
-        String url = properties.getProperty("url");
-        String login = properties.getProperty("login");
-        String password = properties.getProperty("password");
-        Connection connection = DriverManager.getConnection(url, login, password);
-        return DriverManager.getConnection(url, login, password);
-    }
+
     // CRUD: Create - Read - Update - Delete
     //        Create
 //    public void add (City city) throws IOException, ClassNotFoundException, SQLException {
@@ -61,60 +53,40 @@ public class PersonRepository {
             city.id = cityID;
             city.name = cityName;
             person.city = city;
-
-
-//            String sql2 = "select * from city where id = cityID";
-//            PreparedStatement statement2 = connection.prepareStatement(sql2);
-////            statement.setInt(1, id);
-//            // 4
-//            statement2.execute();
-//            // 5
-//            City city = new City();
-//            ResultSet resultSet2 = statement.getResultSet();
-//            if (resultSet2.next()) {
-//                String cityName = resultSet.getString("name");
-//                city.id = cityID;
-//                city.name = cityName;
-//                person.city = city;
-//            }
-
-
-//
-//            ResultSet cityResultSet = statement.getResultSet();
-//            if (resultSet.next()) {
-//                String cityName = cityResultSet.getString("name");
-//                city.id = ;
-//                city.name = name;
-//                cityResultSet.close();
-//                person.city = city;
-//            }
         }
         // 6
         connection.close();
         return person;
     }
-//    public List<City> getAll() throws SQLException, IOException, ClassNotFoundException {
-//        Connection connection = getConnection();
-//        // 3
-//        String sql = "select * from city";
-//        PreparedStatement statement = connection.prepareStatement(sql);
-//        // 4
-//        statement.execute();
-//        // 5
-//        List<City> cities = new ArrayList<>();
-//        ResultSet resultSet = statement.getResultSet();
-//        while (resultSet.next()) {
-//            int id = resultSet.getInt("id");
-//            String name = resultSet.getString("name");
-//
-//            City receivedCity = new City(id, name);
-//            cities.add(receivedCity);
-//        }
-//        // 6
-//        connection.close();
-//
-//        return cities;
-//    }
+
+    public List<Person> getAll() throws SQLException, IOException, ClassNotFoundException {
+        Connection connection = getConnection();
+        // 3
+        String sql = "SELECT person.id AS Id, person.name, age, city.id AS cityID, city.name AS cityName FROM person JOIN city ON person.city_id = city.id";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        // 4
+        statement.execute();
+        // 5
+        List<Person> persons = new ArrayList<>();
+        ResultSet resultSet = statement.getResultSet();
+        while (resultSet.next()) {
+//            int id = resultSet.getInt("ID");
+            String name = resultSet.getString("name");
+            int age = resultSet.getInt("age");
+            int id = resultSet.getInt("Id");
+            int cityID = resultSet.getInt("cityID");
+            String cityName = resultSet.getString("cityName");
+            City city = new City();
+            city.id = cityID;
+            city.name = cityName;
+            Person receivedPerson = new Person(id,name, age,city);
+            persons.add(receivedPerson);
+        }
+        // 6
+        connection.close();
+
+        return persons;
+    }
 //    public void update(City city) throws IOException, ClassNotFoundException, SQLException {
 //        Connection connection = getConnection();
 //        // 3

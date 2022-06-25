@@ -1,4 +1,4 @@
-package ITOveroneSecond.Level4.Lesson7JDBC.model;
+package ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage.model;
 
 public class City {
     public int id;
@@ -18,7 +18,7 @@ public class City {
 
     @Override
     public String toString() {
-        return "\n City {" +
+        return "City {" +
                 "id = " + id +
                 ", name = '" + name + '\'' +
                 '}' ;
