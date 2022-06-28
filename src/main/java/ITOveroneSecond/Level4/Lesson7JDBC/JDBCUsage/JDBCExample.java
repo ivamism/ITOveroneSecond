@@ -1,4 +1,4 @@
-package ITOveroneSecond.Level4.Lesson7JDBC;
+package ITOveroneSecond.Level4.Lesson7JDBC.JDBCUsage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ public class JDBCExample {
     public static void main(String[] args) throws ClassNotFoundException, SQLException, IOException {
         // 1
         Properties properties = new Properties();
-        properties.load(new FileInputStream("config/jdbc.properties"));
+        properties.load(new FileInputStream("src/main/resources/jdbc.properties"));
         Class.forName(properties.getProperty("driver-class-name"));
         // 2: url, login, password
         String url = properties.getProperty("url");

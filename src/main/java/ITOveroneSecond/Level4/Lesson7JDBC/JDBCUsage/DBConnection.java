@@ -10,7 +10,7 @@ import java.util.Properties;
 public class DBConnection {
     public static Connection getConnection () throws IOException, ClassNotFoundException, SQLException {
         Properties properties = new Properties();
-        properties.load(new FileInputStream("config/jdbc.properties"));
+        properties.load(new FileInputStream("src/main/resources/jdbc.properties"));
         Class.forName(properties.getProperty("driver-class-name"));
         // 2: url, login, password
         String url = properties.getProperty("url");
