@@ -10,7 +10,7 @@ import java.util.List;
 public class HibernateUsage {
     public static void main(String[] args) {
 //        Session session = SessionCreator.getSession();
-//        CityRepository cityRepository =new CityRepository();
+        CityRepository cityRepository =new CityRepository();
 //        cityRepository.add(new City("Vitebsk"));
         /*cityRepository.add(new City("Berlin"));
         cityRepository.add(new City("Hrodna"));
@@ -20,9 +20,9 @@ public class HibernateUsage {
 //        System.out.println(city);
 //        cityRepository.update(new City(2, "Vitebsk"));
 //        cityRepository.delete(new City(5));
-//        List<City> cities = cityRepository.getALL();
-//        System.out.println(cities);
-        PersonRepository personRepository = new PersonRepository();
+        List<City> cities = cityRepository.getALL();
+        System.out.println(cities);
+//        PersonRepository personRepository = new PersonRepository();
 //        personRepository.add(new Person(  "polina", 18, new City(2)));
 //        personRepository.add(new Person(  "John", 50, new City(1)));
 //        personRepository.add(new Person(  "Jack", 25, new City(4)));
@@ -30,8 +30,8 @@ public class HibernateUsage {
 //        Person person = personRepository.getByID(2);
 //        personRepository.update(new Person(4, "Ksenia", 20, new City(1)));
 //        personRepository.update(new Person(2, "Polina", 18, new City(2)));
-        personRepository.delete(new Person(6));
-        List<Person> people = personRepository.getALL();
-        System.out.println(people);
+//        personRepository.delete(new Person(6));
+//        List<Person> people = personRepository.getALL();
+//        System.out.println(people);
     }
 }

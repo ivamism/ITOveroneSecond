@@ -24,7 +24,8 @@ public class CityRepository {
     }
     public List<City> getALL() {
         Session session = SessionCreator.getSession();
-        List <City> cities = (List<City>) session.createQuery("from City",City.class )
+        List <City> cities = session
+                .createQuery("from City",City.class )
                 .list();
 
         session.close();

@@ -18,7 +18,7 @@ public class SessionCreator {
     static {
         try {
             Properties properties = new Properties();
-            properties.load(new FileReader("src/main/resources/hibernate.properties"));
+            properties.load(new FileReader("C:\\Users\\Надежда\\IdeaProjects\\ITOveroneSecond\\src\\main\\resources\\hibernate.properties"));
 
             SESSION_FACTORY = new Configuration()
                     .addProperties(properties)
