@@ -20,7 +20,7 @@ public class MyServlet  extends HttpServlet {
         CityRepository cityRepository = new CityRepository();
         List<City> cities = cityRepository.getALL();
         request.setAttribute("cities", cities);
-        System.out.println(cities);
+//        System.out.println(cities);
 
         request.getRequestDispatcher("default.jsp").
                 forward(request, response);
